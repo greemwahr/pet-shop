@@ -1,4 +1,8 @@
+<<<<<<< 539fb52d3fe3764b715d6e2b5eaa35a60a4b2b3f
 pragma solidity ^0.4.17
+=======
+pragma solidity ^0.4.17;
+>>>>>>> Stashing branch
 
 import "truffle/Assert.sol";
 import "truffle/DeployedAddresses.sol";
@@ -29,7 +33,11 @@ contract TestAdoption {
         address expectedAddress = this;
 
         // Store adopters in memory rather than contract's storage
+<<<<<<< 539fb52d3fe3764b715d6e2b5eaa35a60a4b2b3f
         address[16] memory adoptersAddresses = adoption.getAdopers();
+=======
+        address[16] memory adoptersAddresses = adoption.getAdopters();
+>>>>>>> Stashing branch
 
         Assert.equal(adoptersAddresses[8], expectedAddress, "Owner of pet ID 8 should be recorded");
     }
