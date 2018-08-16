@@ -30,7 +30,7 @@ App = {
     } else {
       // If no injected web3 instance is detected, fall back to Ganache
       App.web3Provider = new Web3.providers.HttpProvider(
-        'http://localhost:7545'
+        'http://127.0.0.1:7545'
       )
     }
 
@@ -71,11 +71,13 @@ App = {
       .then(function(adopters) {
         for (i = 0; i < adopters.length; i++) {
           if (adopters[i] !== '0x0000000000000000000000000000000000000000') {
-            $('.pane-pet')
+            $('.panel-pet')
               .eq(i)
               .find('button')
               .text('Success')
               .attr('disabled', true)
+
+            console.log(i, 'address of adopoters')
           }
         }
       })
@@ -87,7 +89,7 @@ App = {
   handleAdopt: function(event) {
     event.preventDefault()
 
-    var petId = parseInt($(event.target).data('id'))
+    var petID = parseInt($(event.target).data('id'))
 
     var adoptionInstance
 
